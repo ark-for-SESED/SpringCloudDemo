@@ -9,12 +9,12 @@
         <version>2.3.7.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.sed.clound</groupId>
-    <artifactId>parent-clound</artifactId>
+    <groupId>com.sed.cloud</groupId>
+    <artifactId>parent-cloud</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <description>spring clound Demo</description>
-    <name>parent-clound-Test</name>
+    <description>spring cloud Demo</description>
+    <name>SpringCloudDemo</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
     <properties>
@@ -41,7 +41,7 @@
     </dependencies>
 
     <build>
-        <finalName>parent-clound</finalName>
+        <finalName>parent-cloud</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <plugin>
@@ -77,14 +77,14 @@
         </pluginManagement>
     </build>
     <modules>
-        <module>clound-global-config</module>
-        <module>clound-global-eureka-clone1</module>
-        <module>clound-global-eureka-clone2</module>
-        <module>clound-global-eureka-clone3</module>
-        <module>clound-server-provider-clone1</module>
-        <module>clound-server-provider-clone2</module>
-        <module>clound-server-provider-clone3</module>
-        <module>clound-server-consume-feign</module>
-        <module>clound-server-global-zuul</module>
+        <module>cloud-global-config</module>
+        <module>cloud-global-eureka-clone1</module>
+        <module>cloud-global-eureka-clone2</module>
+        <module>cloud-global-eureka-clone3</module>
+        <module>cloud-server-provider-clone1</module>
+        <module>cloud-server-provider-clone2</module>
+        <module>cloud-server-provider-clone3</module>
+        <module>cloud-server-consume-feign</module>
+        <module>cloud-server-global-zuul</module>
     </modules>
 </project>
