@@ -82,5 +82,9 @@
         <module>clound-global-eureka-clone2</module>
         <module>clound-global-eureka-clone3</module>
         <module>clound-server-provider-clone1</module>
+        <module>clound-server-provider-clone2</module>
+        <module>clound-server-provider-clone3</module>
+        <module>clound-server-consume-feign</module>
+        <module>clound-server-global-zuul</module>
     </modules>
 </project>
