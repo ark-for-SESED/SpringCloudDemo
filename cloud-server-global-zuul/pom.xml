@@ -12,7 +12,7 @@
     <artifactId>server-global-zuul</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>server-global-zuul</name>
-    <description>Demo project for Spring Boot</description>
+    <description>全局网关路由配置</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -20,15 +20,26 @@
     </properties>
 
     <dependencies>
+        <!--导入注册服务客户端，作用注册到注册服务器集群中-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+        <!--全局路由网关依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
         </dependency>
-
+        <!-- 导入全局配置文件客户端-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+        <!-- actuator监控 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -40,6 +51,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
     </dependencies>
 
     <dependencyManagement>
@@ -53,14 +65,24 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
+    <finalName>${project.name}</finalName>
+    <resources>
+        <resource>
+            <directory>src/main/resources</directory>
+            <filtering>true</filtering>
+        </resource>
+    </resources>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-resources-plugin</artifactId>
+            <configuration>
+                <delimiters>
+                    <delimiter>${*}</delimiter>
+                </delimiters>
+            </configuration>
+        </plugin>
+    </plugins>
     </build>
-
 </project>

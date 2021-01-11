@@ -1,4 +1,7 @@
 spring:
   cloud:
     config:
-      enabled: false
+      name: cloud-global-config-eureka-clone1     #需要从github上读取的资源名称，注意没有yml后缀名
+      profile: dev
+      label: main
+      uri: http://globalConfig.com:8888

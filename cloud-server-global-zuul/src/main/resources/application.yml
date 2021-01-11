@@ -1,1 +1,28 @@
+server:
+  port: 6001
 
+spring:
+  application:
+    name: cloud-zuul-gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8001.com:8001/eureka,http://eureka8002.com:8002/eureka,http://eureka8003.com:8003/eureka
+  instance:
+    instance-id: zuul.gateway6001.com
+    prefer-ip-address: true
+
+zuul:
+  #ignored-services: microservicecloud-dept
+  prefix: /sun
+  ignored-services: "*"
+  routes:
+    mydept.serviceId: clound-server-provider
+    mydept.path: /provider/**
+
+info:
+  app.name: spring-cloud-demo
+  company.name: www.sed.com
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
